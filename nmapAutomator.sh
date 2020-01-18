@@ -333,9 +333,9 @@ for line in $file; do
 	if [[ ! -z $(echo "${line}" | grep -i http) ]]; then
 		port=$(echo "${line}" | cut -d "/" -f 1)
 		if [[ ! -z $(echo "${line}" | grep -w "IIS") ]]; then
-			pages=".html,.asp,.php,.txt, .sh, .cgi"
+			pages=".html,.asp,.php"
 		else
-			pages=".html,.php, .txt, .sh, .cgi"
+			pages=".html,.php"
 		fi
 		if [[ ! -z $(echo "${line}" | grep ssl/http) ]]; then
 			#echo "sslyze --regular $1 | tee recon/sslyze_$1_$port.txt"
